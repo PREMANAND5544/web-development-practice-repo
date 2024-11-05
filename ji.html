@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <b><H1 style="color: #ff00ff;"><u> -:WELLCOME TO MY WEBSITE!:-</u></H1></b>
+    <style>
+        @keyframes advancedAnimation {
+            0% {
+                transform: perspective(400px) rotateX(0) rotateY(0) scale(1);
+                opacity: 1;
+            }
+            25% {
+                transform: perspective(400px) rotateX(45deg) rotateY(45deg) scale(1.2);
+                opacity: 0.8;
+            }
+            50% {
+                transform: perspective(400px) rotateX(-45deg) rotateY(90deg) scale(0.8);
+                opacity: 0.6;
+            }
+            75% {
+                transform: perspective(400px) rotateX(90deg) rotateY(-45deg) scale(1.1);
+                opacity: 0.4;
+            }
+            100% {
+                transform: perspective(400px) rotateX(0) rotateY(360deg) scale(1);
+                opacity: 1;
+            }
+        }
+
+        .animated-element {
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(45deg, #ff00ff, #00ffff);
+            animation: advancedAnimation 5s infinite alternate ease-in-out;
+            margin: 50px auto;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+
+    <div class="animated-element"></div>
+
+    <script>
+        const element = document.querySelector('.animated-element');
+        element.addEventListener('mouseover', () => {
+            element.style.animationPlayState = 'paused';
+        });
+        element.addEventListener('mouseout', () => {
+            element.style.animationPlayState = 'running';
+        });
+    </script>
+    <h2 style="color:#1adddd" > <u>HI, I AM PERMANANDA BISWAL</u></h2>
+    <style>
+        .cube-container {
+            width: 200px;
+            height: 200px;
+            perspective: 1000px;
+            margin: 50px auto;
+        }
+        .cube {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: rotateCube 10s infinite linear;
+        }
+        .cube-face {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border: 2px solid #000;
+            opacity: 0.8;
+        }
+        .front  { transform: rotateY(0deg) translateZ(100px); background: rgba(255, 0, 0, 0.5); }
+        .back   { transform: rotateY(180deg) translateZ(100px); background: rgba(0, 255, 0, 0.5); }
+        .right  { transform: rotateY(90deg) translateZ(100px); background: rgba(0, 0, 255, 0.5); }
+        .left   { transform: rotateY(-90deg) translateZ(100px); background: rgba(255, 255, 0, 0.5); }
+        .top    { transform: rotateX(90deg) translateZ(100px); background: rgba(255, 0, 255, 0.5); }
+        .bottom { transform: rotateX(-90deg) translateZ(100px); background: rgba(0, 255, 255, 0.5); }
+        @keyframes rotateCube {
+            0% { transform: rotateX(0deg) rotateY(0deg); }
+            100% { transform: rotateX(360deg) rotateY(360deg); }
+        }
+    </style>
+    <div class="cube-container">
+        <div class="cube">
+            <div class="cube-face front"></div>
+            <div class="cube-face back"></div>
+            <div class="cube-face right"></div>
+            <div class="cube-face left"></div>
+            <div class="cube-face top"></div>
+            <div class="cube-face bottom"></div>
+        </div>
+    </div>
+    <style>
+        @keyframes colorChange {
+            0% { color: #ff0000; }
+            25% { color: #00ff00; }
+            50% { color: #0000ff; }
+            75% { color: #ffff00; }
+            100% { color: #ff00ff; }
+        }
+
+        .moving-letters {
+            font-size: 24px;
+            font-weight: bold;
+            white-space: nowrap;
+            overflow: hidden;
+            position: relative;
+            animation: moveLetters 10s linear infinite, colorChange 5s infinite;
+        }
+
+        @keyframes moveLetters {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+    </style>
+    <div class="moving-letters">
+        WELCOME TO MY 3D ANIMATION! ENJOY THE BUTTERFLIES
+        </div>
+    </div>
+    
+    <style>
+        .butterfly {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"><path d="M25 0 L50 25 L25 50 L0 25 Z" fill="%23ff9900"/></svg>');
+            background-size: cover;
+            animation: fly 10s linear infinite;
+        }
+        
+        @keyframes fly {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(100px, -50px) rotate(45deg); }
+            50% { transform: translate(200px, 0) rotate(90deg); }
+            75% { transform: translate(100px, 50px) rotate(135deg); }
+            100% { transform: translate(0, 0) rotate(180deg); }
+        }
+    </style>
+    
+    <script>
+        function createButterflies(count) {
+            const container = document.body;
+            for (let i = 0; i < count; i++) {
+                const butterfly = document.createElement('div');
+                butterfly.className = 'butterfly';
+                butterfly.style.left = Math.random() * window.innerWidth + 'px';
+                butterfly.style.top = Math.random() * window.innerHeight + 'px';
+                butterfly.style.animationDelay = Math.random() * 10 + 's';
+                container.appendChild(butterfly);
+            }
+        }
+        
+        createButterflies(10);
+    </script>
+    <style>
+        .heart {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"><path d="M25 39.7l-.6-.5C11.5 28.7 8 25 8 19c0-5 4-9 9-9 4.1 0 6.4 2.3 8 4.1 1.6-1.8 3.9-4.1 8-4.1 5 0 9 4 9 9 0 6-3.5 9.7-16.4 20.2l-.6.5z" fill="%23ff0000"/></svg>');
+            background-size: cover;
+            animation: float 15s ease-in-out infinite;
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotateY(0deg); }
+            25% { transform: translate(50px, -25px) rotateY(180deg); }
+            50% { transform: translate(100px, 0) rotateY(360deg); }
+            75% { transform: translate(50px, 25px) rotateY(540deg); }
+        }
+    </style>
+    
+    <script>
+        function createHearts(count) {
+            const container = document.body;
+            for (let i = 0; i < count; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'heart';
+                heart.style.left = Math.random() * window.innerWidth + 'px';
+                heart.style.top = Math.random() * window.innerHeight + 'px';
+                heart.style.animationDelay = Math.random() * 15 + 's';
+                container.appendChild(heart);
+            }
+        }
+        
+        createHearts(15);
+    </script>
+    
+</body>
+</html>
